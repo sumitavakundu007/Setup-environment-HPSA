@@ -181,7 +181,7 @@ $ source ~/.bashrc
 ```
 Check whwther hoomd is installed properly or not
 ```bash
-/path/to/python/bin/python3
+$ /path/to/python/bin/python3
 >> import hoomd
 >> hoomd.__version__
 ```
@@ -211,4 +211,45 @@ $ cd build
 $ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embree-vx.x.x
 $ make -j 20
 $ make install
+```
+# Compile Fresnel
+```bash
+$ export embree_DIR=/home/user/my_install/embree-vx.x.x/lib/cmake
+$ mkdir /my_install/fresnel-vx.x.x
+```
+```bash
+$ tar -xvf frensel-vx.x.x
+$ cd frensel-vx.x.x
+$ mkdir build
+$ cd build
+$ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/fresnel-vx.x.x
+$ make -j 20
+$ make install
+```
+```bash
+$ export PYTHONPATH=$PYTHONPATH:/home/sumitava/my_install/fresnel
+```
+Check whetjer fresnel is installed properly or not
+```bash
+$ /path/to/python/bin/python3
+>> import fresnel
+>> fresnel.__version__
+```
+# Other softwares
+###  TEXlive-full
+```bash
+$ sudo apt-get install texlive-full
+```
+### Texstudio
+Download .deb file of texstudio
+```bash
+$ sudo apt install ./texstudio-v.x.x.x.deb
+```
+### GIMP
+```bash
+sudo apt-get install gimp
+```
+### Gparted
+```bash
+sudo apt-get install gparted
 ```
