@@ -124,8 +124,8 @@ $ ./configure --prefix=/path/to/openmpi
 $ make -j 10
 $ make install
 ```
-## If you do not install everything from source then follow these steps
-Python3.8 and pip
+## If you do not want to install everything from source then follow these steps
+Python3.8 and pip based on the default GCC 
 ```bash
 $ sudo apt-get install python3.8 python3.8-dev python3.8-distutils python3.8-venv
 $ wget https://bootstrap.pypa.io/get-pip.py
