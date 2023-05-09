@@ -104,7 +104,7 @@ $ make install
 ```
 Export GCC library path
 ```bash
-export CC=/path/to/gcc/bin/gcc
+$ export CC=/path/to/gcc/bin/gcc
 $ export CXX=/path/to/gcc/bin/g++
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/gcc/lib64
 ```
