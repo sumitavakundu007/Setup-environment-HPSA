@@ -269,3 +269,7 @@ Download .deb file
 ```bash
 sudo apt install ./vscode-v.x.x.x.deb
 ```
+### VIM
+```bash
+sudo apt-get install vim
+```
