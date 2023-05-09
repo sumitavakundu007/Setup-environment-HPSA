@@ -179,3 +179,36 @@ $ export PYTHONPATH=$PYTHONPATH:/home/user/my_install/hoomd_vx.x.x/lib/python
 ```bash
 $ source ~/.bashrc
 ```
+Check whwther hoomd is installed properly or not
+```bash
+/path/to/python/bin/python3
+>> import hoomd
+>> hoomd.__version__
+```
+
+### Install Frensel-vx.x.x
+Install libjpeg, libpng, libglfw3, tbb, qhull
+```bash
+$ sudo apt-get install libjpeg libjpeg-dev
+$ sudo apt-get install libpng libpng-dev
+$ sudo apt-get install libglfw3 libglfw3-dev
+$ /path/to/python3/bin/python3 -m pip install tbb
+$ sudo apt-get install -y qhull-bin
+```
+### Install Intel-embree
+```bash
+$ export pybind11_DIR=/home/user/.local/lib/python3.X/site-packages/pybind11
+```
+Create a directory inside my_install for embree installation
+```bash
+$ mkdir /my_install/embree-vx.x.x
+```
+```bash
+$ tar -xvf embree-vx.x.x
+$ cd embree-vx.x.x
+$ mkdir build
+$ cd build
+$ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embree-vx.x.x
+$ make -j 20
+$ make install
+```
