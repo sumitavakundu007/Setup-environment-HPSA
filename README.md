@@ -1,7 +1,7 @@
 # Setup-environment-HPSA
 Setup ubuntu 18.04.6 environment for Hard particle self-assembly reasearch
 
-$ Install ubuntu-18.04.6 bionic
+$ Install ubuntu-18.04.6 bionic.
 You can setup your hard-disk partition like this for 1TB hard-disk
 ```bash
 200GB [Begining of the space] [Ext4-file-system] [Mount point-/]
