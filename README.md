@@ -5,15 +5,15 @@ $ Install ubuntu-18.04.6 bionic
 
 ### Create two directories in /home/user
 ```bash
-mkdir softwares my_install
+$ mkdir softwares my_install
 ```
 ### Install git and set proxy on git
 ```bash
-sudo apt-get install git
+$ sudo apt-get install git
 ```
 open .gitconfig and add the following lines
 ```bash
-vi .gitconfig
+$ vi .gitconfig
 ```
 ```bash
 [http]
@@ -37,11 +37,36 @@ vi .gitconfig
 ### Set proxy on wget
 Open /etc/wgetrc and uncomment the following lines
 ```bash
-sudo vi /etc/wgetrc
+$ sudo vi /etc/wgetrc
 ```
 ```bash
 http_proxy = http://username:password@proxy.server.comn:port/
 https_proxy = https://username:password@proxy.server.comn:port/
 ftp_proxy = ftp://username:password@proxy.server.comn:port/
 use_proxy = on
+```
+## If you want to install almost everything from scratch then follow these steps
+### Install GCC-v7.5.0 (c++11 compiler)
+```bash
+$ unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE
+```
+GCC depends on GMP, MPFR, MPC and ISL. Work for each of them one by one
+```bash
+$ export /path/to/prefix = /custom_path_for_gcc
+```
+### GMP
+```bash
+wget ftp://gcc.gnu.org/pub/gcc/infrastructure/gmp-4.3.2.tar.bz2
+$ tar -xvf gmp-4.3.2.tar
+$ cd gmp-4.3.2
+$ ./configure --disable-shared --enable-static --prefix=/path/to/prefix
+$ make && make check && make install
+```
+### MPFR
+```bash
+$ wget ftp://gcc.gnu.org/pub/gcc/infrastructure/mpc-0.8.1.tar.gz
+$ tar -xvf mpfr-2.4.2.tar
+$ cd mpfr-2.4.2
+$ ./configure --disable-shared --enable-static --prefix=/path/to/prefix --with-gmp=/path/to/prefix
+$ make && make check && make install
 ```
