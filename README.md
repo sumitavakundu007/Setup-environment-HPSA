@@ -102,9 +102,13 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/gcc/lib64
 ```bash
 $ tar -xvf Python-v.3.8.x.tar.xz
 $ cd Python-v.3.8.x
-$  ./configure --prefix=/path/tp/python3 --exec-prefix=/path/tp/python3 --enable-shared
+$  ./configure --prefix=/path/to/python3 --exec-prefix=/path/to/python3 --enable-shared
 $ make -j 10
 $ make install
+```
+Export python3 library path
+```bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/python3/lib
 ```
 ### Camke-v3.x.x
 ```bash
@@ -121,8 +125,18 @@ $ make -j 10
 $ make install
 ```
 ## If you do not install everything from source then follow these steps
+Python3.8 and pip
 ```bash
 $ sudo apt-get install python3.8 python3.8-dev python3.8-distutils python3.8-venv
 $ wget https://bootstrap.pypa.io/get-pip.py
 $ python3.8 get-pip.py
 ```
+### Install python3 packages via pip
+```bash
+python3.8 -m pip install numpy scipy matplotlib garnett freud-analysis alphashape Geometry3D rowan coxeter scikit-learn gsd
+```
+If you install python3 from source code,
+```bash
+/path/to/python3/bin/pip3 install numpy scipy matplotlib garnett freud-analysis alphashape Geometry3D rowan coxeter scikit-learn gsd
+```
+## HOOMD-vx.x.x
