@@ -273,3 +273,7 @@ sudo apt install ./vscode-v.x.x.x.deb
 ```bash
 sudo apt-get install vim
 ```
+### Chromium
+```bash
+sudo apt-get install chromium-browser
+```
