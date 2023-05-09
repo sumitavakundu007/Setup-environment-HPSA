@@ -264,3 +264,8 @@ sudo apt-get install gimp
 ```bash
 sudo apt-get install gparted
 ```
+### VSCode
+Download .deb file
+```bash
+sudo apt install ./vscode-v.x.x.x.deb
+```
