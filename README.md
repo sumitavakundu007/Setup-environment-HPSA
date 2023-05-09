@@ -202,7 +202,19 @@ $ /path/to/python/bin/python3
 >> import hoomd
 >> hoomd.__version__
 ```
-
+### oneTBB
+Create a directory inside my_install
+```bash
+mkdir /my_install/onetbb
+```
+```bash
+$ cd onetbb
+$ mkdir build
+$ cd build
+$ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/onetbb
+$ make -j 20
+$ make install
+```
 ### Install Frensel-vx.x.x
 Install libjpeg, libpng, libglfw3, tbb, qhull
 ```bash
@@ -225,7 +237,7 @@ $ tar -xvf embree-vx.x.x
 $ cd embree-vx.x.x
 $ mkdir build
 $ cd build
-$ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embree-vx.x.x
+$ /path/to/cmake/bin/cmake ../ -DPYTHON_EXECUTABLE=/path/to/python3/bin/python3.8 -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embree-vx.x.x -DTBB_DIR=/home/user/my_install/onetbb
 $ make -j 20
 $ make install
 ```
