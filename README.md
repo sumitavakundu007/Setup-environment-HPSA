@@ -14,7 +14,8 @@ sudo apt-get install git
 open .gitconfig and add the following lines
 ```bash
 vi .gitconfig
->>
+```
+```bash
 [http]
 [http "https://iacs.res.in"]
         proxy = http://User
