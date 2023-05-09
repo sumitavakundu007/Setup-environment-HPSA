@@ -70,3 +70,27 @@ $ cd mpfr-2.4.2
 $ ./configure --disable-shared --enable-static --prefix=/path/to/prefix --with-gmp=/path/to/prefix
 $ make && make check && make install
 ```
+### MPC
+```bash
+$ wget ftp://gcc.gnu.org/pub/gcc/infrastructure/mpc-0.8.1.tar.gz
+$ tar zxvf mpc-0.8.1.tar.gz
+$ cd mpc-0.8.1
+$ ./configure --disable-shared --enable-static --prefix=/path/to/prefix --with-gmp=/path/to/prefix --with-mpfr=/path/to/prefix
+$ make && make check && make install
+```
+### ISL
+```bash
+$ tar -xvf isl-0.18.0.tar.gz
+$ cd isl-0.18.0
+$  ./configure --disable-shared --enable-static --prefix=/path/to/prefix --with-gmp=/path/to/prefix
+$ make && make install
+```
+Now it's the time to compile GCC
+```bash
+$ tar -xvf gcc-vx.x.x
+$ cd gcc-vx.x.x
+$ mkdir build && cd build
+$../configure --prefix=/path/to/prefix --enable-std=c++11 --enable-shared --disable-bootstrap --disable-libstdcxx-pch --enable-languages=all --enable-threads=posix --with-gmp=/path/to/prefix --with-mpfr=/path/to/prefix --with-mpc=/path/to/prefix --with-libisl=/path/to/prefix --disable-multilib --disable-werror
+$ make -j20
+$ make install
+```
