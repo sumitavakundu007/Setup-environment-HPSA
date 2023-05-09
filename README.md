@@ -141,6 +141,9 @@ If you install python3 from source code,
 ```
 ## HOOMD-vx.x.x
 ```bash
+$ vi ~/.bashrc
+```
+```bash
 $ export CC=/path/to/gcc/bin/gcc
 $ export CXX=/path/to/gcc/bin/g++
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/gcc/lib64
@@ -149,6 +152,9 @@ $ export pybind11_DIR=/home/user/.local/lib/python3.X/site-packages/pybind11
 $ which python3 (add the path to -DPYTHON_EXECUTABLE)
 $ which mpirun (add the path to -DMPI_HOME)
 ```
+```bash
+$ source ~/.bashrc
+```
 Create a directory inside my_isnatll for HOOMD installation
 ```bash
 mkdir /my_install/hoomd-v.x.x.x
@@ -156,5 +162,20 @@ mkdir /my_install/hoomd-v.x.x.x
 
 ```bash
 $ tar -xvf hoomd-vx.x.x.tar.gz
-$ /path/to/cmake/bin/cmake ../ -DPYTHON_EXECUTABLE=/path/to/python/bin/python3 -DMPI_HOME=/path/to/openmpi/ -DCMAKE_INSTALL_PREFIX=/home/avisek/sumitava/my_install/hoomd_v2.9.6/lib/python -DCMAKE_PREFIX_PATH=/home/avisek/sumitava/my_install/llvm -DCMAKE_BUILD_TYPE="Debug" -DMKL_INCLUDE_DIR=MKL_INCLUDE_DIR-NOTFOUND -DMKL_LIBRARIES=MKL_LIBRARIES-NOTFOUND -DENABLE_CUDA=OFF -DENABLE_MPI=ON -DBUILD_JIT=ON
+$ cd hoomd-vx.x.x.tar.gz
+$ mkdir build
+$ cd build
+$ /path/to/cmake/bin/cmake ../ -DPYTHON_EXECUTABLE=/path/to/python/bin/python3 -DMPI_HOME=/path/to/openmpi/ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/hoomd_vx.x.x/lib/python  -DCMAKE_BUILD_TYPE="Debug" -DMKL_INCLUDE_DIR=MKL_INCLUDE_DIR-NOTFOUND -DMKL_LIBRARIES=MKL_LIBRARIES-NOTFOUND -DENABLE_CUDA=OFF -DENABLE_MPI=ON
+$ make -j 20
+$ make install
+```
+Now export PYTHONPATH inside .bashrc
+```bash
+$ vi ~/.bashrc
+```
+```bash
+$ export PYTHONPATH=$PYTHONPATH:/home/user/my_install/hoomd_vx.x.x/lib/python
+```
+```bash
+$ source ~/.bashrc
 ```
