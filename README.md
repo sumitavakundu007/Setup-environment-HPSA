@@ -133,10 +133,28 @@ $ python3.8 get-pip.py
 ```
 ### Install python3 packages via pip
 ```bash
-python3.8 -m pip install numpy scipy matplotlib garnett freud-analysis alphashape Geometry3D rowan coxeter scikit-learn gsd
+python3.8 -m pip install numpy scipy matplotlib garnett freud-analysis alphashape Geometry3D rowan coxeter scikit-learn gsd pybind11
 ```
 If you install python3 from source code,
 ```bash
-/path/to/python3/bin/pip3 install numpy scipy matplotlib garnett freud-analysis alphashape Geometry3D rowan coxeter scikit-learn gsd
+/path/to/python3/bin/pip3 install numpy scipy matplotlib garnett freud-analysis alphashape Geometry3D rowan coxeter scikit-learn gsd pybind11
 ```
 ## HOOMD-vx.x.x
+```bash
+$ export CC=/path/to/gcc/bin/gcc
+$ export CXX=/path/to/gcc/bin/g++
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/gcc/lib64
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/python3/lib
+$ export pybind11_DIR=/home/user/.local/lib/python3.X/site-packages/pybind11
+$ which python3 (add the path to -DPYTHON_EXECUTABLE)
+$ which mpirun (add the path to -DMPI_HOME)
+```
+Create a directory inside my_isnatll for HOOMD installation
+```bash
+mkdir /my_install/hoomd-v.x.x.x
+```
+
+```bash
+$ tar -xvf hoomd-vx.x.x.tar.gz
+$ /path/to/cmake/bin/cmake ../ -DPYTHON_EXECUTABLE=/path/to/python/bin/python3 -DMPI_HOME=/path/to/openmpi/ -DCMAKE_INSTALL_PREFIX=/home/avisek/sumitava/my_install/hoomd_v2.9.6/lib/python -DCMAKE_PREFIX_PATH=/home/avisek/sumitava/my_install/llvm -DCMAKE_BUILD_TYPE="Debug" -DMKL_INCLUDE_DIR=MKL_INCLUDE_DIR-NOTFOUND -DMKL_LIBRARIES=MKL_LIBRARIES-NOTFOUND -DENABLE_CUDA=OFF -DENABLE_MPI=ON -DBUILD_JIT=ON
+```
