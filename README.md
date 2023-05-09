@@ -215,6 +215,10 @@ $ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/onet
 $ make -j 20
 $ make install
 ```
+```bash
+export TBB_DIR=/home/sumitava/my_install/oneTBB/lib/cmake
+```
+
 ### Install Frensel-vx.x.x
 Install libjpeg, libpng, libglfw3, tbb, qhull
 ```bash
@@ -237,7 +241,7 @@ $ tar -xvf embree-vx.x.x
 $ cd embree-vx.x.x
 $ mkdir build
 $ cd build
-$ /path/to/cmake/bin/cmake ../ -DPYTHON_EXECUTABLE=/path/to/python3/bin/python3.8 -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embree-vx.x.x -DTBB_DIR=/home/user/my_install/onetbb
+$ /path/to/cmake/bin/cmake ../ -DPYTHON_EXECUTABLE=/path/to/python3/bin/python3.8 -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embree-vx.x.x
 $ make -j 20
 $ make install
 ```
