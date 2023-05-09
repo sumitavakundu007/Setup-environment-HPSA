@@ -85,7 +85,7 @@ $ cd isl-0.18.0
 $  ./configure --disable-shared --enable-static --prefix=/path/to/prefix --with-gmp=/path/to/prefix
 $ make && make install
 ```
-Now it's the time to compile GCC
+### GCC
 ```bash
 $ tar -xvf gcc-vx.x.x
 $ cd gcc-vx.x.x
