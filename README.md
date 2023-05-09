@@ -206,9 +206,9 @@ $ /path/to/python/bin/python3
 ### Install Frensel-vx.x.x
 Install libjpeg, libpng, libglfw3, tbb, qhull
 ```bash
-$ sudo apt-get install libjpeg libjpeg-dev
-$ sudo apt-get install libpng libpng-dev
-$ sudo apt-get install libglfw3 libglfw3-dev
+$ sudo apt-get install libjpeg-dev
+$ sudo apt-get install libpng-dev
+$ sudo apt-get install libglfw3-dev
 $ /path/to/python3/bin/python3 -m pip install tbb
 $ sudo apt-get install -y qhull-bin
 ```
