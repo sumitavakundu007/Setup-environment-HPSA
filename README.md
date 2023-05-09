@@ -34,3 +34,14 @@ vi .gitconfig
         sslVerify = false
         proxy = http://Username:password@proxy.server.com:port
 ```
+### Set proxy on wget
+Open /etc/wgetrc and uncomment the following lines
+```bash
+sudo vi /etc/wgetrc
+```
+```bash
+http_proxy = http://username:password@proxy.server.comn:port/
+https_proxy = https://username:password@proxy.server.comn:port/
+ftp_proxy = ftp://username:password@proxy.server.comn:port/
+use_proxy = on
+```
