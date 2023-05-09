@@ -3,6 +3,17 @@ Setup ubuntu 18.04.6 environment for Hard particle self-assembly reasearch
 
 $ Install ubuntu-18.04.6 bionic
 
+Add proxy 
+```bash
+sudo vi /etc/apt/apt.conf
+```
+```bash
+Acquire::http::proxy "http://user:password@proxy.serever.name:port/";
+Acquire::https::proxy "https://user:password@proxy.serever.name:port/";
+Acquire::ftp::proxy "ftp://user:password@proxy.serever.name:port/";
+Acquire::socks::proxy "socks://user:password@proxy.serever.name:port/";
+```
+
 ### Create two directories in /home/user
 ```bash
 $ mkdir softwares my_install
