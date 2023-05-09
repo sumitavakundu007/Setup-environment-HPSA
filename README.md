@@ -212,7 +212,7 @@ $ /path/to/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=/home/user/my_install/embr
 $ make -j 20
 $ make install
 ```
-# Compile Fresnel
+### Compile Fresnel
 ```bash
 $ export embree_DIR=/home/user/my_install/embree-vx.x.x/lib/cmake
 $ mkdir /my_install/fresnel-vx.x.x
